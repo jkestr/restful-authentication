@@ -57,6 +57,7 @@ module Authentication
         self.crypted_password = encrypt(password)
       end
       def password_required?
+        return false unless member?
         crypted_password.blank? || !password.blank?
       end
     end # instance methods

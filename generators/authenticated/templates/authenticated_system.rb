@@ -9,7 +9,7 @@ module AuthenticatedSystem
     # Accesses the current <%= file_name %> from the session.
     # Future calls avoid the database because nil is not equal to false.
     def current_<%= file_name %>
-      @current_<%= file_name %> ||= (login_from_session || login_from_basic_auth || login_from_cookie) unless @current_<%= file_name %> == false
+      @current_<%= file_name %> ||= (login_from_session || login_from_basic_auth || login_from_cookie || <%= file_name.capitalize %>.new)
     end
 
     # Store the given <%= file_name %> id in the session.
