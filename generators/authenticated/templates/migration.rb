@@ -12,7 +12,7 @@ class <%= migration_name %> < ActiveRecord::Migration
       t.timestamps
       t.string :remember_token, :limit => 40
       t.datetime :remember_token_expires_at
-<% if options[:include_activation] ->
+<% if options[:include_activation] -%>
       t.string :activation_code, :limit => 40
       t.datetime :activated_at<% end %>
 <% if options[:stateful] -%>
